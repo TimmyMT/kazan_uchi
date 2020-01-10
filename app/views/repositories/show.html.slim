@@ -1,10 +1,1 @@
-h1 Repo url:
-= @repository.url
-br
-- @repository.contributors.each do |contrib|
-  = contrib.login
-  span= "="
-  = contrib.contributions
-  br
-
-h3= link_to "Insert repo",root_path
+= render @repository

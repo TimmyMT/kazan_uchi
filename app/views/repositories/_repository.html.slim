@@ -1,0 +1,8 @@
+h1= "Repo url: #{repository.url}"
+
+- repository.contributors.each do |contrib|
+  = contrib.login
+  '
+  = link_to "download pdf", contributor_path(contrib, format: :pdf), target: "_blank"
+  br
+

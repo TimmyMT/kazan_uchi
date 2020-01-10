@@ -3,7 +3,24 @@ class Repository < ApplicationRecord
 
   before_create :already_exists?
   before_create :set_user_with_repo
+  after_create :checked_url
   validate :corrected_url
+
+  def checked_url
+    uri = URI.parse(self.api_contributors_url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+
+    request = Net::HTTP::Get.new(uri.request_uri)
+    res = http.request(request)
+
+    if res.code == "200"
+      transaction do
+        self.valid_api_url = true
+        self.save!
+      end
+    end
+  end
 
   def corrected_url
     htpp_url = self.url.include?("http://github.com")

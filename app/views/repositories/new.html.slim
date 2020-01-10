@@ -1,6 +1,6 @@
 h1 Find repo:
 
-= form_with model: @repository, local: true do |f|
+= form_with model: @repository do |f|
   - if @repository.errors.present?
     - @repository.errors.full_messages.each do |message|
       = message
@@ -10,3 +10,6 @@ h1 Find repo:
   = f.text_field :url, required: true
   '
   = f.submit
+
+.generated-repo
+

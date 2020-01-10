@@ -5,6 +5,7 @@ ruby '2.5.7'
 
 gem 'slim-rails'
 gem 'jquery-rails'
+gem 'rails-js'
 gem "nokogiri"
 gem 'bootstrap', '~> 4.1.3'
 gem 'wicked_pdf'

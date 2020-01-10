@@ -1,0 +1,7 @@
+<% if @repository.valid_api_url? %>
+  $(".generated-repo").empty();
+  $(".generated-repo").append("<%= j render @repository %>")
+<% else %>
+  $(".generated-repo").empty();
+  $(".generated-repo").append("<h3>This repo or user not exist</h3>")
+<% end %>

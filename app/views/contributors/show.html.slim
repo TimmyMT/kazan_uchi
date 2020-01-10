@@ -1,0 +1,11 @@
+h1= @contributor.login
+
+span Api_url:
+'
+= link_to @contributor.api_url, @contributor.api_url
+br
+span url:
+'
+= link_to @contributor.html_url, @contributor.html_url
+br
+span= "contributions: #{@contributor.contributions}"
