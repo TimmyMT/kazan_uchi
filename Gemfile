@@ -7,7 +7,7 @@ gem 'slim-rails'
 gem 'jquery-rails'
 gem 'rails-js'
 gem "nokogiri"
-gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap', '~> 4.4.1'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'autoprefixer-rails'
