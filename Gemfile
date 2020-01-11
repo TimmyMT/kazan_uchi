@@ -7,7 +7,7 @@ gem 'slim-rails'
 gem 'jquery-rails'
 gem 'rails-js'
 gem "nokogiri"
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'autoprefixer-rails'
@@ -49,6 +49,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.8'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -58,6 +60,16 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'capybara', '>= 2.15'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
+  gem 'shoulda-matchers', '~> 2.0'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
 end
 
 

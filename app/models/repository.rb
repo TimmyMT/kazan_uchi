@@ -7,6 +7,8 @@ class Repository < ApplicationRecord
   after_create :checked_url
   validate :corrected_url
 
+  validates :url, presence: true
+
   # self.file.attach(io: File.open("#{Rails.root}/app/file_for_attach.rb"), filename: 'file_for_attach.rb')
 
   def checked_url
@@ -26,6 +28,7 @@ class Repository < ApplicationRecord
   end
 
   def corrected_url
+    return if self.url.nil?
     htpp_url = self.url.include?("http://github.com")
     https_url = self.url.include?("https://github.com")
     default_url = self.url.include?("github.com")
