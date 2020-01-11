@@ -1,15 +1,16 @@
 h1 Find repo:
 
-= form_with model: @repository do |f|
-  - if @repository.errors.present?
-    - @repository.errors.full_messages.each do |message|
-      = message
-      br
-  = f.label :url
-  '
-  = f.text_field :url, required: true
-  '
-  = f.submit "Search"
+.search-repo-form
+  = form_with model: @repository do |f|
+    - if @repository.errors.present?
+      - @repository.errors.full_messages.each do |message|
+        = message
+        br
+    = f.label :url
+    '
+    = f.text_field :url, required: true
+    '
+    = f.submit "Search"
 
 .generated-repo
 

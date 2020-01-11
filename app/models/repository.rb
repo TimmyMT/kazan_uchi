@@ -1,15 +1,13 @@
 class Repository < ApplicationRecord
   has_many :contributors, dependent: :destroy
-  has_many_attached :files
+
+  validates :url, presence: true
+
+  validate :corrected_url
 
   before_create :already_exists?
   before_create :set_user_with_repo
   after_create :checked_url
-  validate :corrected_url
-
-  validates :url, presence: true
-
-  # self.file.attach(io: File.open("#{Rails.root}/app/file_for_attach.rb"), filename: 'file_for_attach.rb')
 
   def checked_url
     uri = URI.parse(self.api_contributors_url)
