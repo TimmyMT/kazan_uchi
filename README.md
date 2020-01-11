@@ -9,3 +9,4 @@ This is application created for test-task of organisation UCHI.RU
 * wicked_pdf
 * Slim
 * PG database
+* RSpec
