@@ -1,8 +1,11 @@
-h1= "Results for: #{repository.url}"
-
-- repository.contributors.each do |contrib|
-  = contrib.login
-  '
-  = link_to "download pdf", contributor_path(contrib, format: :pdf)
-  br
+.card
+  .card-body
+    .card-title
+      h3= "Results for: #{repository.url}"
+    .card-text
+      - repository.contributors.each do |contrib|
+        = contrib.login
+        '
+        = link_to "download pdf", contributor_path(contrib, format: :pdf)
+        br
 

@@ -13,7 +13,7 @@ feature 'Repositories' do
 
     it "search repo with valid url" do
       within ".search-repo-form" do
-        fill_in 'Url', with: "https://github.com/rails/rails"
+        fill_in 'Insert repo url', with: "https://github.com/rails/rails"
         click_on 'Search'
       end
 
@@ -25,7 +25,7 @@ feature 'Repositories' do
 
     it "search repo with invalid url" do
       within ".search-repo-form" do
-        fill_in 'Url', with: "https://github.com/rails"
+        fill_in 'Insert repo url', with: "https://github.com/rails"
         click_on 'Search'
       end
 
@@ -37,7 +37,7 @@ feature 'Repositories' do
 
     it "search repo with not exist repo url" do
       within ".search-repo-form" do
-        fill_in 'Url', with: "https://github.com/TimmyMT/fake_repo_TimmyMT"
+        fill_in 'Insert repo url', with: "https://github.com/TimmyMT/fake_repo_TimmyMT"
         click_on 'Search'
       end
 
@@ -49,7 +49,7 @@ feature 'Repositories' do
 
     it "search repo with not repo url" do
       within ".search-repo-form" do
-        fill_in 'Url', with: "https://google.com"
+        fill_in 'Insert repo url', with: "https://google.com"
         click_on 'Search'
       end
 
